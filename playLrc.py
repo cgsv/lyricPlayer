@@ -23,6 +23,7 @@ def playLrc(lrcfile, singleLine = False):
             print ' ' * ((80 - len(pdata)) / 2) + pdata
     f.close()
 
+#This does not work on my Windows 7 computer and I don't know why
 def playMusic(musicFile):
     source = pyglet.media.load(musicFile)
     player = pyglet.media.Player()
