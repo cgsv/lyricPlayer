@@ -12,6 +12,7 @@ def isBlankline(line): return line.strip() == ''
 
 def isTimeline(line): return '-->' in line
 
+#using a FSM model.
 def playSrt(srtFile):
     f = codecs.open(srtFile, encoding='utf-8')
     tstart, tend = 0.0, 0.0
@@ -41,6 +42,7 @@ def playVideo(videoFile):
     subprocess.call('ffplay -loglevel quiet -x 600 -y 400 ' + videoFile, shell = True)
 
 if __name__ == '__main__':
+    os.system('cls')
     multiprocessing.freeze_support()
     multiprocessing.Process(target=playVideo, args=(r"F:\downton_abbey.4x03.720p_hdtv_x264-fov.mkv",)).start()
     multiprocessing.Process(target=playSrt, args=(r'F:\downton_abbey.4x03.720p_hdtv_x264-fov.chn.srt8',)).start()
