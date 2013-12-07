@@ -37,7 +37,7 @@ def getTimeList(lrcfile):
 
 def lrc2JsArray(lrcfile):
     ret = ''
-    tcl =  getTimeList('love.lrc')
+    tcl =  getTimeList(lrcfile)
     tl = map(lambda x:x[0], tcl)
     cl = map(lambda x:x[1], tcl)
     tlint = [tl[0]]
